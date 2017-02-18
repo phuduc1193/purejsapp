@@ -1,11 +1,14 @@
 import {
     div,
-    text,
     addId
 } from '../builders';
+import navbar from './navbar';
+import banner from './banner';
 
 export default function app() {
-    const appEle = addId(div(text('Hello World')), 'app-container');
+    const navbarEle = navbar();
+    const bannerEle = banner();
+    const appEle = addId(div(navbarEle, bannerEle, menuEle), 'app-container');
 
     return appEle;
 }
