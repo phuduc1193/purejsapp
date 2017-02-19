@@ -39,10 +39,21 @@ export function $(query) {
         });
     }
 
+    function attr(attribute, value) {
+        elements.forEach(ele => {
+            if (value === false) {
+                ele.removeAttribute(attribute);
+            } else {
+                ele.setAttribute(attribute, value);
+            }
+        });
+    }
+
     return {
         on,
         children,
         addClass,
         removeClass,
+        attr
     };
 }

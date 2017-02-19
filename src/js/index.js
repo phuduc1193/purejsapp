@@ -17,6 +17,10 @@ function reducer(state, event, data) {
             return Object.assign({}, state, {
                 cartVisible: !state.cartVisible,
             });
+        case 'ITEM_ADDED':
+            return Object.assign({}, state, {
+                cart: (new Set(state.cart)).add(data.item),
+            });
         default:
             return state;
     }
