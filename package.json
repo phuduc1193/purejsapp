@@ -16,7 +16,7 @@
         "url": "git+ssh://git@github.com/phuduc1193/purejsapp.git"
     },
     "author": "Duc Truong",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/phuduc1193/purejsapp/issues"
     },

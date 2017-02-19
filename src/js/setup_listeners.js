@@ -15,6 +15,19 @@ export default function(store) {
             item: key
         });
     });
+
+    $('body').on('click', e => {
+        if (e.target.classList.contains('remove')) {
+            const element = e.target;
+            const parent = getParentWithKey(element);
+            const key = parseInt(parent.dataset.key, 10);
+
+            parent.parentElement.removeChild(parent);
+            store.trigger('ITEM_REMOVED', {
+                item: key
+            });
+        }
+    });
 }
 
 function getParentWithKey(element) {
