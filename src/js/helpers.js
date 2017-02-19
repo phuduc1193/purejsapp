@@ -21,7 +21,28 @@ export function $(query) {
         });
     }
 
+    function on(event, cb) {
+        elements.forEach(ele => {
+            ele.addEventListener(event, cb);
+        });
+    }
+
+    function addClass(klass) {
+        elements.forEach(ele => {
+            ele.classList.add(klass);
+        });
+    }
+
+    function removeClass(klass) {
+        elements.forEach(ele => {
+            ele.classList.remove(klass);
+        });
+    }
+
     return {
+        on,
         children,
+        addClass,
+        removeClass,
     };
 }
